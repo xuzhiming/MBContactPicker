@@ -287,6 +287,9 @@ CGFloat const kAnimationSpeed = .25;
 
 - (void)contactCollectionView:(MBContactCollectionView*)contactCollectionView entryTextDidChange:(NSString*)text
 {
+    if ([self.delegate respondsToSelector:@selector(contactCollectionView:entryTextDidChange:)]) {
+        [self.delegate contactCollectionView:contactCollectionView entryTextDidChange:text];
+    }
     if ([text isEqualToString:@" "])
     {
         [self hideSearchTableView];
@@ -355,6 +358,17 @@ CGFloat const kAnimationSpeed = .25;
 {
     [self.contactCollectionView addToSelectedContacts:model withCompletion:^{
         [self becomeFirstResponder];
+    }];
+}
+
+-(void)removeFromSelectedContacts:(id<MBContactPickerModelProtocol>)model withCompletion:(void (^)())completion{
+
+    [self.contactsSelected enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        MBContactModel *mod = obj;
+        if ([model.contactTitle isEqualToString:mod.contactTitle]) {
+            [self.contactCollectionView removeFromSelectedContacts:idx withCompletion:completion];
+            *stop = YES;
+        }
     }];
 }
 

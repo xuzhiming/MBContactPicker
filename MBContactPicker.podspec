@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  git_tag        = "0.2.0"
+  git_tag        = "0.2.1"
   s.name         = "MBContactPicker"
   s.version      = git_tag
   s.summary      = "A contact picker that looks like the one in Apple mail for iOS7. This implementation uses a UICollectionView."
@@ -16,14 +16,14 @@ Pod::Spec.new do |s|
                    a high level of flexibility for projects that need it.
                    DESC
 
-  s.homepage     = "http://github.com/Citrrus/MBContactPicker"
+  s.homepage     = "http://github.com/xuzhiming/MBContactPicker"
   s.license      = 'MIT'
   s.author       = {
                       "Matt Bowman" => "mbowman@citrrus.com",
                       "Matt Hupman" => "mhupman@citrrus.com"
                    }
   s.platform     = :ios, '7.0'
-  s.source       = { :git => "https://github.com/Citrrus/MBContactPicker.git", :tag => git_tag }
+  s.source       = { :git => "https://github.com/xuzhiming/MBContactPicker.git", :tag => git_tag }
   s.source_files = 'MBContactPicker'
   s.requires_arc = true
   s.frameworks   = 'UIKit'
