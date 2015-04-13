@@ -367,7 +367,10 @@ typedef NS_ENUM(NSInteger, ContactCollectionViewSection) {
 - (void)removeFocusFromEntry
 {
     MBContactCollectionViewEntryCell *entryCell = (MBContactCollectionViewEntryCell *)[self cellForItemAtIndexPath:[self entryCellIndexPath]];
-    [entryCell removeFocus];
+    if ([entryCell respondsToSelector:@selector(removeFocus)]) {
+        [entryCell removeFocus];
+    }
+//    [entryCell removeFocus];
 }
 
 - (BOOL)entryIsVisible
