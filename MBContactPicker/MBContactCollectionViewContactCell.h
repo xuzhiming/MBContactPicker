@@ -12,7 +12,7 @@
 @interface MBContactCollectionViewContactCell : UICollectionViewCell
 
 @property (nonatomic, strong) id<MBContactPickerModelProtocol> model;
-@property (nonatomic) BOOL focused;
+@property (nonatomic, assign) BOOL focused;
 @property (nonatomic, strong) UIFont *font UI_APPEARANCE_SELECTOR;
 
 - (CGFloat)widthForCellWithContact:(id<MBContactPickerModelProtocol>)model;

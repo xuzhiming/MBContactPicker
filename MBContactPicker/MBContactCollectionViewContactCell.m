@@ -15,6 +15,7 @@
 @end
 
 @implementation MBContactCollectionViewContactCell
+@synthesize focused = _focused;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

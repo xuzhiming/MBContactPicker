@@ -203,6 +203,11 @@ typedef NS_ENUM(NSInteger, ContactCollectionViewSection) {
     }
 }
 
+-(void)setPromptColor:(UIColor *)promptColor{
+    _promptColor = promptColor;
+    self.promptCell.promptColor = promptColor;
+}
+
 #pragma mark - UIResponder
 
 // Important to return YES here if we want to become the first responder after a child (i.e., entry UITextField)
@@ -353,7 +358,9 @@ typedef NS_ENUM(NSInteger, ContactCollectionViewSection) {
     if ([self entryIsVisible])
     {
         MBContactCollectionViewEntryCell *entryCell = (MBContactCollectionViewEntryCell *)[self cellForItemAtIndexPath:[self entryCellIndexPath]];
-        [entryCell setFocus];
+        if ([entryCell respondsToSelector:@selector(setFocus)]) {
+            [entryCell setFocus];
+        }
     }
     else
     {
@@ -479,6 +486,7 @@ typedef NS_ENUM(NSInteger, ContactCollectionViewSection) {
     {
         MBContactCollectionViewPromptCell *cell = (MBContactCollectionViewPromptCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"ContactPromptCell" forIndexPath:indexPath];
         cell.prompt = self.prompt;
+        cell.promptColor = self.promptColor;
         collectionCell = cell;
         self.promptCell = cell;
     }

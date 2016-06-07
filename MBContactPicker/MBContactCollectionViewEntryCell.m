@@ -50,7 +50,7 @@
     textField.delegate = self.delegate;
     textField.text = @" ";
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
-    textField.returnKeyType = UIReturnKeyDone;
+//    textField.returnKeyType = UIReturnKeyDone;
     UIFont *font = [[self.class appearance] font];
     textField.tintColor = [[self.class appearance] tintColor];
     if (font)

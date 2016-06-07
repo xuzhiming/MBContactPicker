@@ -181,6 +181,10 @@ CGFloat const kAnimationSpeed = .25;
     self.contactCollectionView.prompt = _prompt;
 }
 
+-(void)setPromptColor:(UIColor *)promptColor{
+    self.contactCollectionView.promptColor = promptColor;
+}
+
 - (void)setMaxVisibleRows:(CGFloat)maxVisibleRows
 {
     _maxVisibleRows = maxVisibleRows;

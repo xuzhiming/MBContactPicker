@@ -11,6 +11,7 @@
 @interface MBContactCollectionViewPromptCell : UICollectionViewCell
 
 @property (nonatomic, copy) NSString *prompt;
+@property (nonatomic, strong) UIColor *promptColor;
 @property (nonatomic) UIEdgeInsets insets;
 @property (nonatomic, strong) UIFont *font UI_APPEARANCE_SELECTOR;
 

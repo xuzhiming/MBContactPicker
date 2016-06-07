@@ -81,6 +81,10 @@
     self.promptLabel = label;
 }
 
+-(void)setPromptColor:(UIColor *)promptColor{
+    self.promptLabel.textColor = promptColor;
+}
+
 - (void)setPrompt:(NSString *)prompt
 {
     _prompt = prompt.copy;
